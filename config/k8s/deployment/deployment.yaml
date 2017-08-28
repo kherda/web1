@@ -26,7 +26,7 @@ spec:
       containers:
       - name: php-redis
         image: gcr.io/sgc-gke-tutorial/web1:latest
-        imagePullPolicy: Always
+        #imagePullPolicy: Always
         resources:
           requests:
             cpu: 100m
