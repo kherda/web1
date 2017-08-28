@@ -14,7 +14,7 @@ spec:
       containers:
         - name: k8s-php-test
           # TODO: set zone and project
-          image: 'eu.gcr.io/semaphore-gke-tutorial/server'
+          image: 'us.gcr.io/sgc-gke-tutorial/web1'
           imagePullPolicy: Always
           ports:
             - containerPort: 80
