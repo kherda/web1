@@ -5,38 +5,33 @@ metadata:
   # these labels can be applied automatically
   # from the labels in the pod template if not set
   # labels:
-  #   app: guestbook
-  #   tier: frontend
+  #   app: redis
+  #   role: master
+  #   tier: backend
 spec:
   # this replicas value is default
   # modify it according to your case
-  replicas: 3
+  replicas: 1
   # selector can be applied automatically
   # from the labels in the pod template if not set
   # selector:
   #   matchLabels:
   #     app: guestbook
-  #     tier: frontend
+  #     role: master
+  #     tier: backend
   template:
     metadata:
       labels:
-        app: test
-        tier: webserver
+        app: webserver
+        #role: master
+        tier: backend
     spec:
       containers:
-      - name: php-redis
+      - name: master
         image: gcr.io/sgc-gke-tutorial/web1:latest
-        #imagePullPolicy: Always
         resources:
           requests:
             cpu: 100m
             memory: 100Mi
-        env:
-          value: dns
-          # If your cluster config does not include a dns service, then to
-          # instead access environment variables to find service host
-          # info, comment out the 'value: dns' line above, and uncomment the
-          # line below.
-          # value: env
         ports:
-        - containerPort: 80
+        - containerPort: 6379
