@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-kubectl -s http://127.0.0.1:8080 create -f development_tools/cluster_config/app/app.rc.yml
-kubectl -s http://127.0.0.1:8080 create -f development_tools/cluster_config/app/app.service.yml
+kubectl create -f config/k8s/replication_controller.yml
+kubectl create -f config/k8s/service.yml

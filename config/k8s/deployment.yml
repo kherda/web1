@@ -1,13 +1,11 @@
-apiVersion: v1
-kind: ReplicationController
+apiVersion: extensions/v1beta1
+kind: Deployment
 metadata:
   name: k8s-php-test
   labels:
     name: k8s-php-test
 spec:
   replicas: 1
-  selector:
-    name: k8s-php-test
   template:
     metadata:
       labels:
@@ -15,6 +13,8 @@ spec:
     spec:
       containers:
         - name: k8s-php-test
-          image: bitgandtter/k8s_php_test
+          # TODO: set zone and project
+          image: 'eu.gcr.io/semaphore-gke-tutorial/server'
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
