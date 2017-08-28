@@ -25,6 +25,7 @@ spec:
     spec:
       containers:
       - name: php-redis
+        image: gcr.io/sgc-gke-tutorial/web1:latest
         imagePullPolicy: Always
         resources:
           requests:
@@ -39,4 +40,3 @@ spec:
           # value: env
         ports:
         - containerPort: 80
-        image: gcr.io/sgc-gke-tutorial/web1:latest
