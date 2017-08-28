@@ -29,6 +29,7 @@ spec:
       containers:
       - name: master
         image: gcr.io/sgc-gke-tutorial/web1:latest
+        imagePullPolicy: Always
         resources:
           requests:
             cpu: 100m
