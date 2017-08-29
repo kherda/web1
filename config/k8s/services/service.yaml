@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: webserver
+  name: web1-service
   labels:
-    app: test
-    tier: webserver
+    app: webserver
+    tier: service-meta
 spec:
   # if your cluster supports it, uncomment the following to automatically create
   # an external load-balanced IP for the frontend service.
@@ -13,5 +13,5 @@ spec:
     # the port that this service should serve on
   - port: 80
   selector:
-    app: test
-    tier: webserver
+    app: webserver
+    tier: service-selector
