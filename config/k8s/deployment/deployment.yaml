@@ -21,7 +21,7 @@ spec:
   template:
     metadata:
       labels:
-        app: web1
+        app: web1-deployment-pods
         #role: master
         tier: backend
     spec:
