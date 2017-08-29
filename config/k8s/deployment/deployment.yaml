@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: ubuntu
-        image: gcr.io/sgc-gke-tutorial/web1:latest
+        image: gcr.io/kh-test-project/web1:latest
         imagePullPolicy: Always
         resources:
           requests:

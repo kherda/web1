@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+
+gcloud auth application-default login
+
+
 notes
 
 gcloud config set compute/zone us-central1-a
@@ -40,3 +44,6 @@ kubectl create -f config/k8s/service.yml
 
 docker build -t gcr.io/sgc-gke-tutorial/web1 .
 gcloud docker -- push gcr.io/sgc-gke-tutorial/web1
+
+
+kubectl scale --replicas=2 deployment/web1-deployment --namespace web-prod
