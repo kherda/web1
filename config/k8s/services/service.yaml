@@ -3,8 +3,8 @@ kind: Service
 metadata:
   name: web1-service
   labels:
-    app: webserver
-    tier: service-meta
+    app: web1-webserver
+    tier: service-tier
 spec:
   # if your cluster supports it, uncomment the following to automatically create
   # an external load-balanced IP for the frontend service.
@@ -13,5 +13,5 @@ spec:
     # the port that this service should serve on
   - port: 80
   selector:
-    app: web1-deployment-pods
-    tier: service-selector
+    app: web1-deployment
+    tier: server

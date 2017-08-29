@@ -4,13 +4,13 @@ metadata:
   name: web1-deployment
   # these labels can be applied automatically
   # from the labels in the pod template if not set
-  labels:
-    app: webserver
-    tier: backend
+  # labels:
+  #   app: webserver
+  #   tier: backend
 spec:
   # this replicas value is default
   # modify it according to your case
-  replicas: 1
+  replicas: 3
   # selector can be applied automatically
   # from the labels in the pod template if not set
   # selector:
@@ -21,12 +21,12 @@ spec:
   template:
     metadata:
       labels:
-        app: web1-deployment-pods
+        app: web1-deployment
         #role: master
-        tier: backend
+        tier: server
     spec:
       containers:
-      - name: master
+      - name: ubuntu
         image: gcr.io/sgc-gke-tutorial/web1:latest
         imagePullPolicy: Always
         resources:
@@ -34,4 +34,4 @@ spec:
             cpu: 100m
             memory: 100Mi
         ports:
-        - containerPort: 6379
+        - containerPort: 80
